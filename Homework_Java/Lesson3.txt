@@ -1,0 +1,25 @@
+package Lesson3;
+
+import java.util.Scanner;
+
+public class Lesson3 {
+
+        public static void main(String[] args) {
+
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Введите первое слово: ");
+            String word1 = scanner.nextLine();
+
+            System.out.print("Введите второе слово: ");
+            String word2 = scanner.nextLine();
+
+            int length1 = word1.length() / 2;
+            int length2 = word2.length() / 2;
+
+            String result = word1.substring(0, length1) + word2.substring(word2.length() % 2 == 0 ? length2 : length2 + 1);
+            System.out.println("Результат: " + result);
+
+            scanner.close();
+        }
+     }
