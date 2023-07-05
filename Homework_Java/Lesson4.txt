@@ -1,0 +1,27 @@
+package Lesson4;
+
+import java.util.Scanner;
+
+// Домашние Задание 1
+public class Lesson4 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите число для M ");
+        double m = scanner.nextDouble();
+
+        System.out.print("Введите число для N ");
+        double n = scanner.nextDouble();
+
+        double numberM = m - 10;
+        double numberN = n - 10;
+
+        if (numberM == numberN) {
+            System.out.println("Числа == от 10");
+        } else if (numberM < numberN) {
+            System.out.println("Число " + m + " ближе к 10");
+        } else {
+            System.out.println("Число " + n + " ближе к 10");
+        }
+    }
+    
+}
