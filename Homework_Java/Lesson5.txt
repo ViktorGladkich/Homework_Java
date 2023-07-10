@@ -1,0 +1,32 @@
+package Lesson5;
+
+import java.util.Scanner;
+
+public class Lesson5 {
+        public static void main(String[] args) {
+            boolean isEdekaOpen = true;
+            boolean isReweOpen = false;
+
+            boolean canBuy = canBuyFood(isEdekaOpen, isReweOpen);
+
+            String message = "Я могу купить еду, это " + (canBuy ? "возможно" : "невозможно");
+            System.out.println(message);
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Введите год: ");
+            int year = scanner.nextInt();
+
+            boolean isLeap = isLeapYear(year);
+
+            String message2 = year + (isLeap ? " - високосный год" : " - не високосный год");
+            System.out.println(message2);
+        }
+
+        public static boolean canBuyFood(boolean isEdekaOpen, boolean isReweOpen) {
+            return isEdekaOpen || isReweOpen;
+        }
+
+        public static boolean isLeapYear(int year) {
+            return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
+        }
+    }
