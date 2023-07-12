@@ -1,0 +1,44 @@
+public class Lesson6 {
+    public static void main(String[] args) {
+        int temperature1 = 120;
+        int temperature2 = 80;
+
+        boolean deviceStatus = device (temperature1, temperature2);
+        if (deviceStatus) {
+        System.out.println("Устройство работает корректно: " + deviceStatus);
+    } else {
+            System.out.println("Устройство работает некорректно");
+        }
+        int amount = 21;
+        int days = calDaysWithdraw(amount);
+        System.out.println("Для снятия суммы " + amount +"$  потребуется " + days + " дней ");
+    }
+
+    public static boolean device(int temperature1, int temperature2) {
+        if (temperature1 > 100 && temperature2 < 100) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public static int calDaysWithdraw(int amount) {
+        int days = 0;
+
+        while (amount > 0) {
+            int withdrawal = findMaxExponent(amount);
+            amount -= withdrawal;
+            days++;
+        }
+
+        return days;
+    }
+
+    private static int findMaxExponent(int num) {
+        for (int i = num -1; i >=1; i--) {
+            if (num % i == 0) {
+                return i;
+            }
+        }
+        return 1;
+    }
+}
