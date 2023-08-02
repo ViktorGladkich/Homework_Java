@@ -1,0 +1,23 @@
+public class Lesson8 {
+    public static int findElement ( int[] arr, int n) {
+        int expSum = (n * (n+1)) / 2;
+        int actuelSum = 0;
+        for (int num : arr) {
+            actuelSum += num;
+        }
+        int missElement = expSum - actuelSum;
+        return missElement;
+    }
+
+    public static void main(String[] args) {
+        int[] arr1 = {1,2,3,5};
+        int n1 = 5;
+        int resultat1 = findElement(arr1, n1);
+        System.out.println("Primer 1 = "+ resultat1);
+
+        int[] arr2 = {1,2,3,4,5,7,9,8,10};
+        int n2 = 10;
+        int resultat2 = findElement(arr2, n2);
+        System.out.println("Primer 2 = "+ resultat2);
+    }
+}
